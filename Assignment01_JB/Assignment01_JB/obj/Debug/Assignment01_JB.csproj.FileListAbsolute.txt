@@ -1,0 +1,14 @@
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\bin\Debug\Assignment01_JB.exe.config
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\bin\Debug\Assignment01_JB.exe
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\bin\Debug\Assignment01_JB.pdb
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\obj\Debug\Assignment01_JB.csproj.AssemblyReference.cache
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\obj\Debug\Assignment01_JB.Form1.resources
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\obj\Debug\Assignment01_JB.Properties.Resources.resources
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\obj\Debug\Assignment01_JB.csproj.GenerateResource.cache
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\obj\Debug\Assignment01_JB.csproj.CoreCompileInputs.cache
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\obj\Debug\Assignment01_JB.exe
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\obj\Debug\Assignment01_JB.pdb
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\bin\Debug\Assignment01_JB.exe.manifest
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\bin\Debug\Assignment01_JB.application
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\obj\Debug\Assignment01_JB.exe.manifest
+C:\Users\School\source\repos\Assignment01_JB\Assignment01_JB\obj\Debug\Assignment01_JB.application
