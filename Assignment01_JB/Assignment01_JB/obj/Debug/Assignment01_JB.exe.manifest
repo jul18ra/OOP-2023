@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Assignment01_JB.exe" size="15808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Assignment01_JB.exe" size="41920">
       <assemblyIdentity name="Assignment01_JB" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>evIw/z8ZvetDhOOSeyXeS1jE/BvD+Lg7piSovyhLisA=</dsig:DigestValue>
+        <dsig:DigestValue>7WLkhLn3yo/yULHL0JvraLcRBW/1J6CgQXuB+9HPzf8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
