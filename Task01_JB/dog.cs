@@ -1,8 +1,18 @@
 ﻿using System;
 
-public class Class1
+public class Dog
 {
-	public Class1()
-	{
-	}
+    float weight;
+
+    public Dog(float weight)
+    {
+        this.weight = weight;
+    }
+
+    public void getFoodAmount()
+    {
+        string foodAmount;
+
+    }
+        
 }
