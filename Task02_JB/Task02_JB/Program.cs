@@ -38,14 +38,14 @@ public class Dog
         }
         else
         {
-            bool loops = true;
+            bool foundCorrectWeight = false;
             int n = 1;
 
-            while (loops)
+            while (!foundCorrectWeight)
             {
                 if (weight < 45 + 4.5 * n)
                 {
-                    loops = false;
+                    foundCorrectWeight = true;
                 }
                 else
                 {
