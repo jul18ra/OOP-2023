@@ -62,16 +62,3 @@ public class Dog
     }
 }
 
-namespace MyApp
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            float dogweight = 50f;
-            Dog taffy = new Dog(dogweight);
-            Console.WriteLine(taffy.getFoodAmount());
-        }
-    }
-}
-
