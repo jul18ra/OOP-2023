@@ -38,12 +38,28 @@ public class Dog
         }
         else
         {
-            foodAmount = "WIP";
+            bool loops = true;
+            int n = 1;
+
+            while (loops)
+            {
+                if (weight < 45 + 4.5 * n)
+                {
+                    loops = false;
+                }
+                else
+                {
+                    n++;
+                }
+            }
+
+            float result = 4.25f + 0.25f * (n - 1);
+            foodAmount = result.ToString();
         }
 
         return foodAmount;
-    }
 
+    }
 }
 
 namespace MyApp
@@ -52,7 +68,8 @@ namespace MyApp
     {
         static void Main(string[] args)
         {
-            Dog taffy = new Dog(46);
+            float dogweight = 50f;
+            Dog taffy = new Dog(dogweight);
             Console.WriteLine(taffy.getFoodAmount());
         }
     }
