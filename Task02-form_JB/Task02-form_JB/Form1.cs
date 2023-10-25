@@ -23,7 +23,9 @@ namespace Task02_form_JB
 
         private void button_Click(object sender, EventArgs e)
         {
-
+            float dogWeight = float.Parse(textBox.Text);
+            Dog yourDog = new Dog(dogWeight);
+            MessageBox.Show($"{yourDog.getFoodAmount()}");
         }
     }
 }
