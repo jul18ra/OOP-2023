@@ -267,6 +267,9 @@
             this.Controls.Add(this.greetingTextBox);
             this.Controls.Add(this.greetingButton);
             this.Controls.Add(this.nameTextBox);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(836, 525);
+            this.MinimumSize = new System.Drawing.Size(836, 525);
             this.Name = "Form1";
             this.Text = "GUI";
             this.Load += new System.EventHandler(this.Form1_Load);
