@@ -16,5 +16,14 @@ namespace Task02_form_JB
         {
             InitializeComponent();
         }
+
+        private void textBox_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

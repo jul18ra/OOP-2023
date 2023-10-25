@@ -1,6 +1,4 @@
-﻿using System;
-
-public class Dog
+﻿public class Dog
 {
     float weight;
 
