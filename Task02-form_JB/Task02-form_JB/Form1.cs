@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Task02_form_JB
 {
@@ -19,6 +21,8 @@ namespace Task02_form_JB
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
+            textBox.ForeColor = Color.Black;
+
         }
 
         private void button_Click(object sender, EventArgs e)
@@ -29,12 +33,22 @@ namespace Task02_form_JB
             if (conversionSuccess && dogWeight > 0) 
             {
                 Dog yourDog = new Dog(dogWeight);
-                MessageBox.Show($"{yourDog.getFoodAmount()}");
+                MessageBox.Show($"Recommended food amount: {yourDog.getFoodAmount()} cups per day");
             }
             else
             {
                 MessageBox.Show("Invalid input");
             }
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void infoLabel_Click(object sender, EventArgs e)
+        {
 
         }
     }
