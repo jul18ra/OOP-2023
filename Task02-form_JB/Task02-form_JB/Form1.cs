@@ -23,9 +23,19 @@ namespace Task02_form_JB
 
         private void button_Click(object sender, EventArgs e)
         {
-            float dogWeight = float.Parse(textBox.Text);
-            Dog yourDog = new Dog(dogWeight);
-            MessageBox.Show($"{yourDog.getFoodAmount()}");
+            string userInput = textBox.Text;
+            bool conversionSuccess = float.TryParse(userInput, out float dogWeight);
+
+            if (conversionSuccess && dogWeight > 0) 
+            {
+                Dog yourDog = new Dog(dogWeight);
+                MessageBox.Show($"{yourDog.getFoodAmount()}");
+            }
+            else
+            {
+                MessageBox.Show("Invalid input");
+            }
+
         }
     }
 }
