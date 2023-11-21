@@ -21,30 +21,14 @@ namespace Assignment02
 
         public string CompanyName
         {
-            get
-            {
-                return companyName;
-            }
-
-            set
-            {
-                companyName = value;
-            }
-
+            get { return companyName; }
+            set { companyName = value; }
         }
 
         public int EmployeeNumber
         {
-            get
-            {
-                return employeeNumber;
-            }
-
-            set
-            {
-                employeeNumber = value;
-            }
-
+            get { return employeeNumber; }
+            set { employeeNumber = value; }
         }
     }
 }
