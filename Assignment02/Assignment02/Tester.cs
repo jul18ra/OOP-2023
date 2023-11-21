@@ -8,5 +8,16 @@ namespace Assignment02
 {
     internal class Tester : Employee
     {
+        private int salary = 3400;
+
+        public Tester() : base("", 0)
+        {
+
+        }
+
+        public int Salary
+        {
+            get { return salary; }
+        }
     }
 }

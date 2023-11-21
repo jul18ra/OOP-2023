@@ -8,5 +8,16 @@ namespace Assignment02
 {
     internal class Marketer : Employee
     {
+        private int salary = 3600;
+
+        public Marketer() : base("", 0)
+        {
+
+        }
+
+        public int Salary
+        {
+            get { return salary; }
+        }
     }
 }
