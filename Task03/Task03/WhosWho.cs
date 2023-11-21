@@ -10,6 +10,19 @@ namespace Task03
     {
         static void Main(string[] args)
         {
+            Person peter = new Person();
+            peter.Greet();
+
+            Student mary = new Student();
+            mary.SetAge(12);
+            mary.Greet();
+            mary.ShowAge();
+            mary.Study();
+
+            Teacher james = new Teacher();
+            james.SetAge(36);
+            james.Greet();
+            james.Explain();
         }
     }
 }
