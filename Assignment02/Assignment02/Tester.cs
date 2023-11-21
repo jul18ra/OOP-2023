@@ -12,7 +12,6 @@ namespace Assignment02
 
         public Tester() : base("", 0)
         {
-
         }
 
         public int Salary

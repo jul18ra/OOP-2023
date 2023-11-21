@@ -28,5 +28,4 @@ namespace Assignment02
             set { address = value; }
         }
     }
-    }
 }
