@@ -8,7 +8,7 @@ namespace Task04
 {
     class InvalidStudentIDException : Exception
     {
-        public InvalidStudentIDException() 
+        public InvalidStudentIDException()
         {
             Console.WriteLine("Invalid student ID");
         }
