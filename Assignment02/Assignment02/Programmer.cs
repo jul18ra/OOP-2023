@@ -10,9 +10,8 @@ namespace Assignment02
     {
         private int salary = 3900;
 
-        public Programmer() : base("", 0)
+        public Programmer(string name, string address, string companyName, int employeeNumber) : base(name, address, companyName, employeeNumber)
         {
-
         }
 
         public int Salary

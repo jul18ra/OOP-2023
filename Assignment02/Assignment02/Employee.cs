@@ -13,7 +13,7 @@ namespace Assignment02
         private string companyName;
         private int employeeNumber;
 
-        public Employee(string companyName, int employeeNumber) : base("", "")
+        public Employee(string name, string address, string companyName, int employeeNumber) : base(name, address)
         {
             this.companyName = companyName;
             this.employeeNumber = employeeNumber;  
