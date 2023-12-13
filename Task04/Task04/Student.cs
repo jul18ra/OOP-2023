@@ -10,10 +10,5 @@ namespace Task04
     {
         private int studentID;
         public int StudentID { get { return studentID; } set { studentID = value; } }
-
-        Student(int studentID)
-        {
-            this.studentID = studentID;
-        }
     }
 }
