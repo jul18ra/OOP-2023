@@ -19,7 +19,7 @@ namespace Task04
                     newStudent.StudentID = "James007";
                     ValidateStudent(newStudent);
                 }
-                catch (InvalidStudentNameExceptionex)
+                catch (InvalidStudentNameException ex)
                 {
                     Console.WriteLine(ex.Message);
                 }
