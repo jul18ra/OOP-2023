@@ -8,7 +8,7 @@ namespace Task04
 {
     internal class Student
     {
-        private object studentID;
-        public object StudentID { get { return studentID; } set { studentID = value; } }
+        private string studentID;
+        public string StudentID { get { return studentID; } set { studentID = value; } }
     }
 }

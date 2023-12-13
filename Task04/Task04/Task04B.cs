@@ -30,7 +30,7 @@ namespace Task04
             string pattern = @"[0-9]";
             Regex rgx = new Regex(pattern);
 
-            if (rgx.IsMatch(student.StudentID)
+            if (rgx.IsMatch(student.StudentID))
             {
                 Console.WriteLine("Student ID is valid");
             }
