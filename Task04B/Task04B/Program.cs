@@ -27,7 +27,7 @@ namespace Task04
         }
         private static void ValidateStudent(Student student)
         {
-            string pattern = @"[0-9]";
+            string pattern = @"^[0-9]+$";
             Regex rgx = new Regex(pattern);
 
             if (rgx.IsMatch(student.StudentID))
