@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Task04
 {
-    class InvalidStudentNameException : Exception
+    class InvalidStudentIDException : Exception
     {
-        public InvalidStudentNameException() 
+        public InvalidStudentIDException() 
         {
             Console.WriteLine("Invalid student ID");
         }
