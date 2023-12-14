@@ -11,14 +11,15 @@ namespace Assignment03B
     {
         static void Main(string[] args)
         {
-            AskForInfo();
+            InputNewCustomer();
         }
 
-        private static void AskForInfo()
+        private static void InputNewCustomer()
         {
-            string name;
-            string email;
-            int age;
+            string name = "";
+            int age = 0;
+            string email = "";
+
             bool inputIsValid = false;
 
             Console.WriteLine("Enter full name:");
@@ -65,6 +66,21 @@ namespace Assignment03B
                 }
             }
 
+            SaveCustomerInfo(name, age, email);
+        }
+
+        private static void SaveCustomerInfo(string name, int age, string email)
+        {
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            filePath += @"\customers.txt";
+
+            using (StreamWriter sW = File.AppendText(filePath))
+            {
+                sW.WriteLine(name);
+                sW.WriteLine(age);
+                sW.WriteLine(email);
+                // File.Open(filePath, FileMode.Open);
+            }
         }
 
         private static void ValidateEmail(string email)
