@@ -11,6 +11,11 @@ namespace Assignment03A
     {
         static void Main(string[] args)
         {
+            AskForInfo();
+        }
+
+        private static void AskForInfo() 
+        {
             string name;
             string email;
             int age;
@@ -19,8 +24,7 @@ namespace Assignment03A
             Console.WriteLine("Enter full name:");
             name = Console.ReadLine();
 
-
-            while(!inputIsValid)
+            while (!inputIsValid)
             {
                 Console.WriteLine("Enter age:");
 
@@ -42,10 +46,38 @@ namespace Assignment03A
                     Console.WriteLine("Invalid age");
                 }
             }
-         
-            Console.WriteLine("Enter email address:");
-            email = Console.ReadLine();
-            
+
+            inputIsValid = false;
+
+            while (!inputIsValid)
+            {
+                Console.WriteLine("Enter email address:");
+                email = Console.ReadLine();
+
+                try
+                {
+                    ValidateEmail(email);
+                    inputIsValid = true;
+                }
+                catch
+                {
+                    Console.WriteLine("Invalid email");
+                }
+            }
+
+        }
+
+        private static void ValidateEmail(string email)
+        {
+            string pattern = @"^[\w-\.]+@([\w-]+\.)+[\w-]+$+";
+
+            Regex rgx = new Regex(pattern);
+
+            if (!rgx.IsMatch(email))
+            {
+                throw new FormatException();
+            }
+
         }
 
     }
