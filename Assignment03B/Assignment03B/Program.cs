@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,14 +25,18 @@ namespace Assignment03B
 
             Console.WriteLine("Enter full name:");
             name = Console.ReadLine();
+            Console.WriteLine("");
 
             while (!inputIsValid)
             {
                 Console.WriteLine("Enter age:");
+                string ageAsString = Console.ReadLine();
+                Console.WriteLine("");
 
                 try
                 {
-                    age = int.Parse(Console.ReadLine());
+                    age = int.Parse(ageAsString);
+
                     if (age > 0)
                     {
                         inputIsValid = true;
@@ -44,7 +49,8 @@ namespace Assignment03B
                 }
                 catch
                 {
-                    Console.WriteLine("Invalid age");
+                    Console.WriteLine("Invalid age\n");
+
                 }
             }
 
@@ -54,6 +60,7 @@ namespace Assignment03B
             {
                 Console.WriteLine("Enter email address:");
                 email = Console.ReadLine();
+                Console.WriteLine("");
 
                 try
                 {
@@ -62,7 +69,7 @@ namespace Assignment03B
                 }
                 catch
                 {
-                    Console.WriteLine("Invalid email");
+                    Console.WriteLine("Invalid email\n");
                 }
             }
 
@@ -71,15 +78,36 @@ namespace Assignment03B
 
         private static void SaveCustomerInfo(string name, int age, string email)
         {
-            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            filePath += @"\customers.txt";
+            string fileName = @"\customers.txt";
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + fileName;
 
             using (StreamWriter sW = File.AppendText(filePath))
             {
                 sW.WriteLine(name);
                 sW.WriteLine(age);
-                sW.WriteLine(email);
-                // File.Open(filePath, FileMode.Open);
+                sW.WriteLine($"{email}\n");
+            }
+
+            EnterAnotherCustomer(filePath);
+        }
+
+        private static void EnterAnotherCustomer(string file)
+        {
+            Console.WriteLine("Enter another customer? y/n");
+            string input = Console.ReadLine();
+
+            if (input == "y")
+            {
+                Console.WriteLine("");
+                InputNewCustomer();
+            }
+            else if (input == "n")
+            {
+                Process.Start("notepad.exe", file);
+            }
+            else
+            {
+                Console.WriteLine("Invalid input\n");
             }
         }
 
