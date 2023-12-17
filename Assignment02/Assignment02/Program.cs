@@ -9,46 +9,58 @@ namespace Assignment02
 {
     internal class Program
     {
-        private string name = "";
-        private string address = "";
-        private string companyName = "";
-        private string employeeCategory = "";
-        private int employeeNumber = 0;
-        private bool employeeNumberIsValid;
-        private int salary = 0;
-
         static void Main(string[] args)
         {
             Program program = new Program();
             program.CreateEmployee();
         }
 
-        private void AskForInfo()
+        private void CreateEmployee()
         {
-            Console.WriteLine("Enter employee name:");
-            name = Console.ReadLine() ?? "";
-            Console.WriteLine("\n");
+            string name = AskForInfo("name");
+            string address = AskForInfo("address");
+            string companyName = AskForInfo("company name");
+            int employeeNumber = AskForEmployeeNumber();
+            int salary = CalculateEmployeeSalary(name, address, companyName, employeeNumber);
 
-            Console.WriteLine("Enter employee address:");
-            address = Console.ReadLine() ?? "";
-            Console.WriteLine("\n");
+            Console.WriteLine($"Employee name: {name}");
+            Console.WriteLine($"Employee address: {address}");
+            Console.WriteLine($"Company name: {companyName}");
+            Console.WriteLine($"Employee number: {employeeNumber}");
+            Console.WriteLine($"Employee salary: {salary}");
+        }
 
-            Console.WriteLine("Enter company name:");
-            companyName = Console.ReadLine() ?? "";
+        private string AskForInfo(string info)
+        {
+            Console.WriteLine($"Enter {info}:");
+            string infoInput = Console.ReadLine() ?? "";
             Console.WriteLine("\n");
+            return infoInput;
+        }
 
+        private string AskForEmployeeCategory()
+        {
+            string employeeCategory = "";
+            
             while (employeeCategory != "programmer" & employeeCategory != "tester" & employeeCategory != "marketer")
             {
                 Console.WriteLine("Enter employee category (programmer, tester, marketer):");
                 employeeCategory = Console.ReadLine() ?? "programmer";
 
-                if(employeeCategory != "programmer" & employeeCategory != "tester" & employeeCategory != "marketer")
+                if (employeeCategory != "programmer" & employeeCategory != "tester" & employeeCategory != "marketer")
                 {
                     Console.WriteLine("Invalid category");
                 }
                 Console.WriteLine("\n");
-
             }
+
+            return employeeCategory;
+        }
+
+        private int AskForEmployeeNumber()
+        {
+            bool employeeNumberIsValid = false;
+            int employeeNumber = 0; 
 
             while (!employeeNumberIsValid)
             {
@@ -56,22 +68,24 @@ namespace Assignment02
                 try
                 {
                     employeeNumber = Int32.Parse(Console.ReadLine() ?? "0");
-                    employeeNumberIsValid = true;   
+                    employeeNumberIsValid = true;
                 }
                 catch
                 {
                     Console.WriteLine("Invalid employee number");
                     Console.WriteLine("\n");
-
                 }
 
             }
-
+            return employeeNumber;
 
         }
 
-        private void PickEmployeeCategory()
+        private int CalculateEmployeeSalary(string name, string address, string companyName, int employeeNumber)
         {
+            string employeeCategory = AskForEmployeeCategory();
+            int salary = 0;
+
             switch (employeeCategory)
             {
                 case "programmer":
@@ -90,23 +104,8 @@ namespace Assignment02
                     break;
             }
 
-        }
+            return salary;
 
-        private void DisplayInfo()
-        {
-            Console.WriteLine($"Employee name: {name}");
-            Console.WriteLine($"Employee address: {address}");
-            Console.WriteLine($"Company name: {companyName}");
-            Console.WriteLine($"Employee number: {employeeNumber}");
-            Console.WriteLine($"Employee salary: {salary}");
         }
-
-        private void CreateEmployee()
-        {
-            AskForInfo();
-            PickEmployeeCategory();
-            DisplayInfo();
-        }
-
     }
 }
