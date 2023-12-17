@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,70 +18,68 @@ namespace Assignment01_JB
 {
     public partial class Form1 : Form
     {
-        bool addition = false;
-        bool subtraction = false;
-        bool multiplication = false;
-        bool division = false;
-        bool modulo = false;
-
-        public float GetOperand1()
+        // Returns the operand from the specified text box
+        public float GetOperand(TextBox operandTextBox)
         {
-
-            float operand1 = float.Parse(operand1TextBox.Text);
-            return operand1;
-
+            float operand = float.Parse(operandTextBox.Text);
+            return operand;
         }
-
-        public float GetOperand2()
+      
+        // Calculates result for operation 
+        public void CalculateResult(string logic)
         {
-            float operand2 = float.Parse(operand2TextBox.Text);
-            return operand2;
-        }
+            double result = 0;
 
-        public void CalculateResult()
-        {
             try
             {
-                double result = 0;
+                float operand1 = GetOperand(operand1TextBox);
+                float operand2 = GetOperand(operand2TextBox);
 
-                if (addition == true)
+                switch (logic)
                 {
-                    result = Math.Round((GetOperand1() + GetOperand2()), 2);
-                    addition = false;
+                    // Addition
+                    case "+":
+                        result = operand1 + operand2;
+                        break;
+
+                    // Subtraction
+                    case "-":
+                        result = operand1 - operand2;
+                        break;
+
+                    // Multiplication
+                    case "*":
+                        result = operand1 * operand2;
+                        break;
+
+                    // Division
+                    case "/":
+                        result = operand1 / operand2;
+                        break;
+
+                    // Modulo
+                    case "%":
+                        result = operand1 % operand2;
+                        break;
                 }
 
-                else if (subtraction == true)
-                {
-                    result = Math.Round((GetOperand1() - GetOperand2()), 2);
-                    subtraction = false;
-                }
-
-                else if (multiplication == true)
-                {
-                    result = Math.Round((GetOperand1() * GetOperand2()), 2);
-                    multiplication = false;
-                }
-
-                else if (division == true)
-                {
-                    result = Math.Round((GetOperand1() / GetOperand2()), 2);
-                    division = false;
-                }
-                else if (modulo == true)
-                {
-                    result = Math.Round((GetOperand1() % GetOperand2()), 2);
-                    modulo = false;
-                }
-
+                // Displays the rounded result in the text box
+                result = Math.Round(result, 2);
                 calculationTextBox.Text = result.ToString();
+
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Invalid operand(s)", "Error", MessageBoxButtons.OK);
             }
             catch
             {
-                MessageBox.Show("Invalid operand(s)", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Invalid operation", "Error", MessageBoxButtons.OK);
             }
             
         }
 
+        // Calculates how many days old you are based on date of birth
         public double CalculateDaysOld()
         {
 
@@ -106,6 +105,7 @@ namespace Assignment01_JB
             }
         }
 
+        // Calculates number of characters in a string
         public int CalculateChars()
         {
             string sentence = sentenceTextBox.Text;
@@ -200,32 +200,27 @@ namespace Assignment01_JB
 
         private void additionButton_Click(object sender, EventArgs e)
         {
-            addition = true;
-            CalculateResult();
+            CalculateResult("+");
         }
 
         private void subtractionButton_Click(object sender, EventArgs e)
         {
-            subtraction = true; 
-            CalculateResult();
+            CalculateResult("-");
         }
 
         private void multiplicationButton_Click(object sender, EventArgs e)
         {
-            multiplication = true;
-            CalculateResult();
+            CalculateResult("*");
         }
 
         private void divisionButton_Click(object sender, EventArgs e)
         {
-            division = true;    
-            CalculateResult();
+            CalculateResult("/");
         }
 
         private void moduloButton_Click(object sender, EventArgs e)
         {
-            modulo = true;
-            CalculateResult();
+            CalculateResult("%");
         }
     }
 
