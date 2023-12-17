@@ -27,6 +27,7 @@ namespace Assignment03B
             name = Console.ReadLine();
             Console.WriteLine("");
 
+            // Asks for age and checks if it is correct
             while (!inputIsValid)
             {
                 Console.WriteLine("Enter age:");
@@ -56,6 +57,7 @@ namespace Assignment03B
 
             inputIsValid = false;
 
+            // Asks for email
             while (!inputIsValid)
             {
                 Console.WriteLine("Enter email address:");
@@ -76,6 +78,7 @@ namespace Assignment03B
             SaveCustomerInfo(name, age, email);
         }
 
+        // Saves customer info to file
         private static void SaveCustomerInfo(string name, int age, string email)
         {
             string fileName = "customers.txt";
@@ -91,6 +94,7 @@ namespace Assignment03B
             EnterAnotherCustomer(filePath);
         }
 
+        // Asks if the user wants to enter another customer and if not, customers.txt is opened
         private static void EnterAnotherCustomer(string file)
         {
             Console.WriteLine("Enter another customer? y/n");
