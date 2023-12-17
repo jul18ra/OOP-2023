@@ -78,8 +78,8 @@ namespace Assignment03B
 
         private static void SaveCustomerInfo(string name, int age, string email)
         {
-            string fileName = @"\customers.txt";
-            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + fileName;
+            string fileName = "customers.txt";
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, fileName);
 
             using (StreamWriter sW = File.AppendText(filePath))
             {
