@@ -15,6 +15,7 @@ namespace Assignment02
             program.CreateEmployee();
         }
 
+        // Asks for info and displays it
         private void CreateEmployee()
         {
             string name = AskForInfo("name");
@@ -42,6 +43,8 @@ namespace Assignment02
         {
             string employeeCategory = "";
             
+            // Keeps asking employee category until a valid category is given
+
             while (employeeCategory != "programmer" & employeeCategory != "tester" & employeeCategory != "marketer")
             {
                 Console.WriteLine("Enter employee category (programmer, tester, marketer):");
@@ -60,7 +63,9 @@ namespace Assignment02
         private int AskForEmployeeNumber()
         {
             bool employeeNumberIsValid = false;
-            int employeeNumber = 0; 
+            int employeeNumber = 0;
+
+            // Keeps asking employee number until a valid number is given
 
             while (!employeeNumberIsValid)
             {
@@ -81,6 +86,7 @@ namespace Assignment02
 
         }
 
+        // Calculates employee salary based on employee category
         private int CalculateEmployeeSalary(string name, string address, string companyName, int employeeNumber)
         {
             string employeeCategory = AskForEmployeeCategory();
